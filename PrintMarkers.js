@@ -58,8 +58,16 @@ function ParseBin(bin) {
 
 function ParseSequence(sequence) {
 	sequence.marker.forEach(function(marker){
+		PrepareMarker(marker);
+	});
+	sequence.marker.sort(dynamicSort("id"));
+	sequence.marker.forEach(function(marker){
 		ParseMarker(marker);
 	});
+}
+
+function PrepareMarker(marker) {
+	marker.id = parseInt(marker.in[0]);
 }
 
 function ParseMarker(marker) {
@@ -69,3 +77,15 @@ function ParseMarker(marker) {
 	console.log(marker.comment[0]);
 	console.log("\n");
 };
+
+function dynamicSort(property) {
+    var sortOrder = 1;
+    if(property[0] === "-") {
+        sortOrder = -1;
+        property = property.substr(1);
+    }
+    return function (a,b) {
+        var result = (a[property] < b[property]) ? -1 : (a[property] > b[property]) ? 1 : 0;
+        return result * sortOrder;
+    }
+}
