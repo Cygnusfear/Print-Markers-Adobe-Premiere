@@ -47,8 +47,7 @@ function ParseProject(project) {
 };
 
 function ParseBin(bin) {
-	console.log("\n"+bin.name[0].bold);
-	console.log("------------------------"+"\n\n");
+	console.log("\n"+bin.name[0].bold.underline+"\n\n");
 	bin.children.forEach(function(child){
 		child.sequence.forEach(function(sequence){
 			ParseSequence(sequence);
@@ -71,9 +70,9 @@ function PrepareMarker(marker) {
 }
 
 function ParseMarker(marker) {
-	console.log((" " + marker.in[0].toString() + " " ).inverse);
-	var name = marker.name[0];
-	console.log(name.bold);
+	console.log((" " + marker.in[0].toString() + " " ).inverse + " " + marker.name[0].bold);
+	// var name = marker.name[0];
+	// console.log(name.bold);
 	console.log(marker.comment[0]);
 	console.log("\n");
 };
