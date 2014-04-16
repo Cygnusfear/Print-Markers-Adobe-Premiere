@@ -7,8 +7,9 @@ This is a Javascript file that can be run using NodeJS
 
 ## Installation
 
-* Install NodeJS if you haven't already: http://nodejs.org/
-* Install the following packages:
+Install NodeJS if you haven't already: http://nodejs.org/
+
+Install the following packages:
 
     npm install colors
     npm install xml2js
