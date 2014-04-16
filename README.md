@@ -14,5 +14,6 @@ Install the following packages:
     npm install colors
     npm install xml2js
 
+## Usage
 
-
+    node PrintMarkers.js /Directory/Filename.xml
